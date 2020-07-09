@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post    "login"     => "sessions#create"
   delete  "logout"    => "sessions#destroy"
   get     "users"     => "users#index"
-  root    "sessions#new"
+  root    "home#index"
   resources :home
   resources :users
   resources :sessions, only: [:new, :create, :destory]

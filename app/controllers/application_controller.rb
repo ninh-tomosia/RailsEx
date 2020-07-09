@@ -1,16 +1,13 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
     include SessionsHelper
-    # def logged_in?
-    #     @current_user.present?
-    # end
+    before_action :running
 
-    # def log_in(user)
-    #     session[:user_id] = user.id
-    # end
+    protected
 
-    # def current_user
-    #     @current_user ||= User.find_by(id: session[:user_id])
-    # end
-
+    def running
+        if logged_in? == false
+            redirect_to login_path
+        end
+    end
 end
