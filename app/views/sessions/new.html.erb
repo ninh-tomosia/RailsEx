@@ -1,2 +1,6 @@
-<% @name_btn = "Login" %>
-<%= render partial: "sessions/form_login" %>
+<%= render partial: "shared/header" %>
+<div class="container">
+    <% @name_btn = "Login" %>
+    <%= render partial: "sessions/form_login" %>
+</div>
+<%= render partial: "shared/footer" %>

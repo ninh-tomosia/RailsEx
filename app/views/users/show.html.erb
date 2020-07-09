@@ -1,42 +1,46 @@
-<div class="d-form-if">
-    <div class="d-if-group">
-        <div class="d-if-label">
-            Name
+<%= render partial: "shared/header" %>
+<div class="container">
+    <div class="d-form-if">
+        <div class="d-if-group">
+            <div class="d-if-label">
+                Name
+            </div>
+            <div class="d-if-value">
+                <%= @user.name %>
+            </div>
         </div>
-        <div class="d-if-value">
-            <%= @user.name %>
+        <div class="d-if-group">
+            <div class="d-if-label">
+                Email
+            </div>
+            <div class="d-if-value">
+                <%= @user.email %>
+            </div>
         </div>
-    </div>
-    <div class="d-if-group">
-        <div class="d-if-label">
-            Email
+        <div class="d-if-group">
+            <div class="d-if-label">
+                Phone
+            </div>
+            <div class="d-if-value">
+                <%= @user.phone %>
+            </div>
         </div>
-        <div class="d-if-value">
-            <%= @user.email %>
+        <div class="d-if-group">
+            <div class="d-if-label">
+                Address
+            </div>
+            <div class="d-if-value">
+                <%= @user.address %>
+            </div>
         </div>
-    </div>
-    <div class="d-if-group">
-        <div class="d-if-label">
-            Phone
-        </div>
-        <div class="d-if-value">
-            <%= @user.phone %>
-        </div>
-    </div>
-    <div class="d-if-group">
-        <div class="d-if-label">
-            Address
-        </div>
-        <div class="d-if-value">
-            <%= @user.address %>
-        </div>
-    </div>
-    <div class="d-if-group">
-        <div class="d-if-btn btn-link">
-            <%= link_to "Edit", edit_user_path(@user) %>
-        </div>
-        <div class="d-if-btn btn-link">
-            <%= link_to "Back", users_path %>
+        <div class="d-if-group">
+            <div class="d-if-btn btn-link">
+                <%= link_to "Edit", edit_user_path(@user) %>
+            </div>
+            <div class="d-if-btn btn-link">
+                <%= link_to "Back", users_path %>
+            </div>
         </div>
     </div>
 </div>
+<%= render partial: "shared/footer" %>
