@@ -1,13 +1,18 @@
 class SessionsController < ApplicationController
+
   def new
-    @user = User.new
+    if logged_in?
+      redirect_to users_path
+    else
+      @user = User.new
+    end
   end
 
   def create
     user = User.find_by(email: permit_params[:email])
     if user && user.authenticate(permit_params[:password])
         log_in user
-        redirect_to users_path
+        redirect_to home_path
     else
       flash[:danger] = 'Invalid email/password combination'
       render 'new'
@@ -15,6 +20,10 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    if logged_in?
+      session[:user_id] = nil
+      redirect_to login_path
+    end
   end
 
   private

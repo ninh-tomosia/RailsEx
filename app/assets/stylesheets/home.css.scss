@@ -42,6 +42,17 @@ body {
                         text-transform: uppercase;
                         color: #fff;
                     }
+                    .sub-menu {
+                        list-style: none;
+                        display: none;
+                        padding: 5px;
+                    }
+                    &:hover .sub-menu {
+                        display: block;
+                        background: #092842;
+                        position: absolute;
+                        z-index: 10000;
+                    }
                 }
             }
         }
