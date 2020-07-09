@@ -1,0 +1,15 @@
+<%= link_to "Add User", new_user_path %>
+<% if @users.empty? == false %>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <%= render partial: "users/list_users", collection: @users, as: "user"  %>
+        </tbody>
+    </table>
+<% end %>
