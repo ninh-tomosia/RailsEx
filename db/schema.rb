@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_07_08_084434) do
     t.string "phone"
     t.string "address"
     t.string "role"
+    t.string "remember_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
