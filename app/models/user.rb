@@ -18,7 +18,7 @@ class User < ApplicationRecord
         # BCrypt::Engine.hash_secret(string, cost)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost: cost)
+        BCrypt::Password.create(string, cost: cost)
     end
 
     def remember
