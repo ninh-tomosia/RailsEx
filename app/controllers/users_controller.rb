@@ -9,10 +9,11 @@ class UsersController < ApplicationController
         @user = User.new
     end
     def create
-        @user = User.new(get_params)
-        @user.password = get_params[:password]
-        @user.password_confirmation = get_params[:password]
-        if @user.save
+        user = User.new(get_params)
+        user.password = get_params[:password]
+        user.password_confirmation = get_params[:password]
+
+        if user.save
             redirect_to users_path
         else
             render :new
@@ -26,7 +27,7 @@ class UsersController < ApplicationController
     end
     def update
         @user = User.find(params[:id])
-        if @user.update(get_params)
+        if @user.update_attributes(get_params)
             redirect_to users_path
         else
             render :edit
@@ -42,4 +43,5 @@ class UsersController < ApplicationController
     def get_params
         params.require(:user).permit(:name, :email, :password, :phone, :address)
     end
+
 end
