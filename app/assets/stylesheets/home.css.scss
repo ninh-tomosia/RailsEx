@@ -61,9 +61,51 @@ body {
         width: 90%;
         margin: 0 auto;
         padding: 20px 0;
-        h1 {
+        h1,
+        h2 {
             padding: 10px;
             text-align: center;
+        }
+        .form-user {
+            width: 500px;
+            margin: 10px auto;
+            background: #05b2b8;
+            padding: 20px 50px;
+            .row {
+                width: 100%;
+                margin: 4px 0px;
+                label {
+                    width: 30%;
+                    margin: 4px 0px;
+                }
+                input {
+                    width: 70%;
+                    padding: 4px 8px;
+                }
+                input[ type="submit"] {
+                    margin-top: 10px;
+                    margin-left: 30%;
+                    text-transform: uppercase;
+                    text-align: center;
+                    padding: 6px 20px;
+                }
+                .remember {
+                    width: 70%;
+                    display: inline-block;
+                    margin-left: 30%;
+                    label {
+                        width: 100%;
+                        input[ type="checkbox"] {
+                            width: 15px;
+                            height: 15px;
+                            padding: 5px;
+                        }
+                    }
+                    p {
+                        margin: 10px 0px;
+                    }
+                }
+            }
         }
     }
 }

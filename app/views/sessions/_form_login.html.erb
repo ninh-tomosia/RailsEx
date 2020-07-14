@@ -1,12 +1,30 @@
-<%= form_for(:sessions, url: login_path) do |f| %>
-    <%= f.label :email %>
-    <%= f.text_field :email, type: 'email' %>
-    <%= f.label :password %>
-    <%= f.text_field :password, type: 'password' %>
-    <%= f.label :remember_me, class: "checkbox inline" do %>
-        <%= f.check_box :remember_me %>
-        <span>Remember me on this computer</span>
+<div class="form-user">
+    <h2><%= @form_name %></h2>
+    <%= form_for(:sessions, url: login_path) do |f| %>
+        <div class="row">
+            <%= f.label :email %>
+            <%= f.text_field :email, type: 'email' %>
+        </div>
+        <div class="row">
+        <%= f.label :password %>
+        <%= f.text_field :password, type: 'password' %>
+        </div>
+        <div class="row">
+            <div class="remember">
+                <%= f.label :remember_me, class: "checkbox inline" do %>
+                    <%= f.check_box :remember_me %>
+                    <span>Remember me on this computer</span>
+                <% end %>
+            </div>
+        </div>
+        <div class="row">
+            <%= f.submit "#{@name_btn}" %>
+        </div>
+        <div class="row">
+            <div class="remember">
+                <p>Create new account? <%= link_to "Sign up now!", signup_path %></p>
+            </div>
+        </div>
     <% end %>
-    <%= f.submit "#{@name_btn}" %>
-<% end %>
-<p>Create new account? <%= link_to "Sign up now!", signup_path %></p>
+    
+</div>

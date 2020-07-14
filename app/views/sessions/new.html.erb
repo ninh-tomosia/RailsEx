@@ -1,7 +1,7 @@
 <%= provide :title, "Login" %>
 <%= render partial: "shared/header" %>
 <div class="container">
-    <% @name_btn = "Login" %>
+    <% @name_btn = "Login"; @form_name = "Login" %>
     <%= render partial: "sessions/form_login" %>
 </div>
 <%= render partial: "shared/footer" %>

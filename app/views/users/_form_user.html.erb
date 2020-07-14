@@ -1,13 +1,28 @@
-<%= form_for @user do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :email %>
-    <%= f.text_field :email, type: 'email' %>
-    <%= f.label :phone %>
-    <%= f.text_field :phone, type: 'tel' %>
-    <%= f.label :password %>
-    <%= f.text_field :password, type: 'password' %>
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-    <%= f.submit "#{@name_btn}" %>
-<% end %>
+<div class="form-user">
+    <h2><%= @form_name %></h2>
+    <%= form_for @user do |f| %>
+        <div class="row">
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+        </div>
+        <div class="row">
+            <%= f.label :email %>
+            <%= f.text_field :email, type: 'email' %>
+        </div>
+        <div class="row">
+            <%= f.label :phone %>
+            <%= f.text_field :phone, type: 'tel' %>
+        </div>
+        <div class="row">
+            <%= f.label :password %>
+            <%= f.text_field :password, type: 'password' %>
+        </div>
+        <div class="row">
+            <%= f.label :address %>
+            <%= f.text_field :address %>
+        </div>
+        <div class="row">
+            <%= f.submit @name_btn %>
+        </div>
+    <% end %>
+</div>
