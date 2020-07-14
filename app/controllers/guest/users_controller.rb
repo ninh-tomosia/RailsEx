@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Guest::UsersController < ApplicationController
     skip_before_action :running, only: [:new, :create]
 
     def index

@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class Guest::SessionsController < ApplicationController
   skip_before_action :running
 
   def new
