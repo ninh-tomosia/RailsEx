@@ -12,6 +12,7 @@ class Guest::UsersController < ApplicationController
         user = User.new(get_params)
         user.password = get_params[:password]
         user.password_confirmation = get_params[:password]
+        user.role = "admin"
 
         if user.save
             redirect_to users_path

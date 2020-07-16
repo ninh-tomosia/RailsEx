@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
   root "guest/home#index"
 
-  scope module: "admin", path: "admin/" do
+  scope module: "admin", path: "admin" do
     get "dashboard", to: "dashboard#index"
     resources :dashboard, only: [:index]
+    resources :posts
   end
 
   scope module: "guest" do
