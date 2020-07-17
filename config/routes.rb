@@ -6,8 +6,14 @@ Rails.application.routes.draw do
 
   scope module: "admin", path: "admin" do
     get "dashboard", to: "dashboard#index"
+    get "posts", to: "posts#index"
+    get "add-post", to: "posts#new"
+    post "posts", to: "posts#create"
+    get "edit-post", to: "posts#edit"
+    put "posts", to: "posts#update"
+    delete "posts", to: "posts#destroy"
+    get "show-post", to: "posts#show"
     resources :dashboard, only: [:index]
-    resources :posts
   end
 
   scope module: "guest" do
@@ -19,6 +25,8 @@ Rails.application.routes.draw do
     get     "users"     => "users#index"
     resources :home
     resources :users
+    resources :posts
+    resources :comments
     resources :sessions, only: [:new, :create, :destory]
   end
   # Ex:- scope :active, -> {where(:active => true)}

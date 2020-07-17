@@ -1,0 +1,11 @@
+<div>
+    <%= link_to @post.user.name, user_path(@post.user) %>
+    <%= @post.title %>
+    <%= @post.content %>
+    <%= render partial: "comment", collection: @comments, as: "comment" %>
+    <%
+=begin%>
+ <%= render template: "comment" %> 
+<%
+=end%>
+</div>
